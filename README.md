@@ -182,12 +182,6 @@ models/
 ###  Checkpoints de Groove2Groove (`v01`)
 [Inserta aquí tu link de descarga]
 
----
-
-##  Nota Importante
-
-Asegúrate de respetar exactamente los nombres de las carpetas:
-
 - `soundfonts`
 - `checkpoints`
 - `groove2groove`
