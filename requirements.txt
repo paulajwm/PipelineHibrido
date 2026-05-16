@@ -1,0 +1,16 @@
+# Procesamiento de Audio y MIDI
+pretty_midi
+pypianoroll
+librosa
+soundfile
+pyfluidsynth
+
+# Aprendizaje Profundo (Deep Learning)
+torch
+torchvision
+tensorflow>=2.0  # MuseGAN original usaba 1.x, pero intentaremos usar compatibilidad
+
+# Utilidades y Análisis
+numpy
+matplotlib
+scipy
