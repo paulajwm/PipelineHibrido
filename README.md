@@ -141,3 +141,81 @@ Este proyecto se alinea con los principios de **Green AI**, priorizando:
 - La reducción del consumo energético
 
 El sistema está diseñado como una herramienta de composición asistida, promoviendo una sinergia entre el algoritmo y el creador humano.
+
+---
+
+##  Configuración del Directorio de Modelos (`models/`)
+
+Debido a las limitaciones de tamaño de GitHub, los archivos de los modelos entrenados (*checkpoints*) y las fuentes de sonido (*soundfonts*) deben descargarse manualmente.
+
+Antes de ejecutar el proyecto, asegúrate de crear la siguiente estructura de carpetas en la raíz del proyecto e introducir los archivos correspondientes:
+
+```text
+models/
+├── soundfonts/
+│   └── default.sf2
+└── checkpoints/
+    ├── musegan_hybrid.data-00000-of-00001
+    ├── musegan_hybrid.index
+    ├── musegan_hybrid.meta
+    ├── checkpoint
+    ├── config.yaml
+    └── groove2groove/
+        └── v01/
+            ├── latest.ckpt-19207.data-00000-of-00001
+            ├── latest.ckpt-19207.index
+            ├── latest.ckpt-19207.meta
+            ├── latest_checkpoint
+            └── model.yaml
+```
+
+---
+
+##  Enlaces de Descarga
+
+###  Soundfont (`default.sf2`)
+[Inserta aquí tu link de Google Drive / OneDrive / Dropbox]
+
+###  Checkpoints de MuseGAN Hybrid
+[Inserta aquí tu link de descarga]
+
+###  Checkpoints de Groove2Groove (`v01`)
+[Inserta aquí tu link de descarga]
+
+---
+
+##  Nota Importante
+
+Asegúrate de respetar exactamente los nombres de las carpetas:
+
+- `soundfonts`
+- `checkpoints`
+- `groove2groove`
+- `v01`
+
+El script `main.py` depende de esta estructura para localizar correctamente los archivos del sistema.
+
+---
+
+#  Cómo subir archivos pesados a la nube
+
+Dado que algunos archivos superan el límite de **100 MB** de GitHub, se recomienda alojarlos externamente y compartir enlaces públicos de descarga.
+
+## Opciones recomendadas
+
+### 1. Google Drive / OneDrive / Dropbox
+1. Sube los archivos a tu almacenamiento en la nube.
+2. Configura el enlace como:
+   - **"Cualquier persona con el enlace puede ver"**
+3. Copia el enlace y sustitúyelo en el README.
+
+### 2. Hugging Face (Recomendado para proyectos de IA)
+También puedes utilizar Hugging Face como repositorio de modelos:
+
+1. Crea una cuenta gratuita en Hugging Face.
+2. Crea un repositorio de tipo **Model**.
+3. Sube los checkpoints y soundfonts.
+4. Comparte el enlace público en este README.
+
+
+GitHub mostrará la estructura de carpetas sin necesidad de subir los modelos reales.
