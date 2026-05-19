@@ -155,11 +155,12 @@ models/
 ├── soundfonts/
 │   └── default.sf2
 └── checkpoints/
-    ├── musegan_hybrid.data-00000-of-00001
-    ├── musegan_hybrid.index
-    ├── musegan_hybrid.meta
-    ├── checkpoint
-    ├── config.yaml
+    ├── musegan_hybrid/
+         ├── musegan_hybrid.data-00000-of-00001
+         ├── musegan_hybrid.index
+         ├── musegan_hybrid.meta
+         ├── checkpoint
+         └── config.yaml
     └── groove2groove/
         └── v01/
             ├── latest.ckpt-19207.data-00000-of-00001
