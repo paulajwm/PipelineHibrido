@@ -175,13 +175,13 @@ models/
 ##  Enlaces de Descarga
 
 ###  Soundfont (`default.sf2`)
-[Inserta aquí tu link de Google Drive / OneDrive / Dropbox]
+[https://github.com/FluidSynth/fluidsynth/releases]
 
 ###  Checkpoints de MuseGAN Hybrid
-[Inserta aquí tu link de descarga]
+[https://github.com/salu133445/musegan]
 
 ###  Checkpoints de Groove2Groove (`v01`)
-[Inserta aquí tu link de descarga]
+[https://github.com/cifkao/groove2groove]
 
 - `soundfonts`
 - `checkpoints`
