@@ -170,6 +170,8 @@ models/
             └── model.yaml
 ```
 
+El script `main.py` depende de esta estructura para localizar correctamente los archivos del sistema.
+
 ---
 
 ##  Enlaces de Descarga
@@ -182,10 +184,3 @@ models/
 
 ###  Checkpoints de Groove2Groove (`v01`)
 [https://github.com/cifkao/groove2groove]
-
-- `soundfonts`
-- `checkpoints`
-- `groove2groove`
-- `v01`
-
-El script `main.py` depende de esta estructura para localizar correctamente los archivos del sistema.
