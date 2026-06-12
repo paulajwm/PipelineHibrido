@@ -6,7 +6,6 @@ Este repositorio contiene la implementación técnica del Trabajo de Fin de Grad
 
 El sistema aborda la rigidez rítmica y la falta de intención expresiva de los modelos generativos mediante una arquitectura modular que combina **MuseGAN** para la composición de la estructura armónica base y **Groove2Groove** para la transferencia de estilo rítmico.
 
-
 #  Características Técnicas
 
 ###  Generación Multicanal
@@ -30,22 +29,13 @@ Reinterpretación de secuencias melódicas en 9 géneros musicales:
 - Tango
 
 ###  Humanización Rítmica
-Modelado de:
-- Micro-timing
-- Variaciones de intensidad (*velocity*)
-
-mediante mecanismos de atención.
+Modelado de variaciones de intensidad (*velocity*) y micro-timing mediante mecanismos de atención cruzada.
 
 ###  Green AI
-Optimizado para ejecución en unidades centrales de procesamiento (**CPU**), garantizando:
-- Accesibilidad
-- Sostenibilidad computacional
+Optimizado para ejecución en unidades centrales de procesamiento (**CPU**), garantizando accesibilidad y sostenibilidad computacional.
 
 ###  Síntesis Acústica
-Renderizado de audio de alta fidelidad (**44.1 kHz**) mediante:
-- FluidSynth
-- Normalización de picos para asegurar la integridad de la señal
-
+Renderizado de audio de alta fidelidad (**44.1 kHz**) mediante FluidSynth y normalización de picos para asegurar la integridad de la señal.
 
 
 #  Requisitos e Instalación
@@ -53,14 +43,12 @@ Renderizado de audio de alta fidelidad (**44.1 kHz**) mediante:
 Debido al uso de arquitecturas de *Legacy AI*, es fundamental configurar un entorno específico para garantizar la compatibilidad de las dependencias.
 
 ## Requisitos de Software
-
 - **Gestor de entornos:** Anaconda o Miniconda
-- **Sistema Operativo:** Optimizado para entornos Windows debido a la gestión de librerías dinámicas (DLL) de audio
+- **Sistema Operativo:** Optimizado para entornos Windows debido a la gestión de librerías dinámicas (DLL) de audio.
 
 
 
 ## Configuración del Entorno
-
 Para reconstruir el entorno de ejecución `tfg_antiguo`, utilice el archivo de configuración proporcionado:
 
 ```bash
@@ -131,6 +119,12 @@ python main.py
 | Institución | ETSI Sistemas Informáticos - Universidad Politécnica de Madrid (UPM) |
 | Titulación | Doble Grado en Ingeniería de Software y Tecnologías para la Sociedad de la Información |
 
+# Repositorios Base
+
+Este pipeline híbrido integra y adapta las implementaciones de código abierto de los autores originales. El núcleo de los modelos generativos se apoya en los siguientes proyectos:
+
+* **Groove2Groove:** Basado en el código oficial de Ondřej Cifka ([cifkao/groove2groove](https://github.com/cifkao/groove2groove)) y su framework `museflow`.
+* **MuseGAN:** Basado en el desarrollo original de Hao-Wen Dong ([salu133445/musegan](https://github.com/salu133445/musegan)).
 
 
 #  Sostenibilidad y Ética
@@ -144,11 +138,25 @@ El sistema está diseñado como una herramienta de composición asistida, promov
 
 ---
 
-##  Configuración del Directorio de Modelos (`models/`)
+## Configuración de Código Externo y Checkpoints
+Debido a las restricciones de tamaño de GitHub y a la arquitectura modular del pipeline, el código fuente de Groove2Groove y los archivos de los modelos (checkpoints) deben configurarse manualmente en local.
 
-Debido a las limitaciones de tamaño de GitHub, los archivos de los modelos entrenados (*checkpoints*) y las fuentes de sonido (*soundfonts*) deben descargarse manualmente.
+### 1. Clonar el repositorio de Groove2Groove
 
-Antes de ejecutar el proyecto, asegúrate de crear la siguiente estructura de carpetas en la raíz del proyecto e introducir los archivos correspondientes:
+Para que el módulo `StyleTransfer` realice la inferencia correctamente, es necesario clonar el repositorio oficial con su código fuente en tu máquina:
+
+```bash
+git clone [https://github.com/cifkao/groove2groove.git](https://github.com/cifkao/groove2groove.git)
+```
+Dentro del script encargado de la transferencia de estilo, se utiliza una ruta absoluta local para mapear los submódulos. Antes de ejecutar el sistema, debes abrir el archivo de código correspondiente y modificar la variable ruta_codigo para que apunte al directorio /code de la carpeta donde hayas clonado el repositorio de Groove2Groove en tu ordenador.
+
+Ejemplo de modificación:
+ruta_codigo = r"C:\TuUsuario\Proyectos\groove2groove\code"
+
+
+###  2. Estructura del Directorio de Modelos (`models/`)
+
+Asegúrate de crear la siguiente estructura de carpetas en la raíz de este proyecto e introducir los archivos de los checkpoints y soundfonts correspondientes:
 
 ```text
 models/
